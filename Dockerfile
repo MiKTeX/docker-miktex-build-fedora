@@ -1,6 +1,6 @@
-FROM fedora:25
+FROM fedora:latest
 
-LABEL Description="MiKTeX build environment, Fedora 25" Vendor="Christian Schenk" Version="2.9.6374"
+LABEL Description="MiKTeX build environment, Fedora 25" Vendor="Christian Schenk" Version="2.9.6701"
 
 RUN dnf install -y bison
 RUN dnf install -y cmake

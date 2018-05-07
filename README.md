@@ -1,14 +1,14 @@
-# Fedora 25 docker image with MiKTeX build environment
+# Fedora docker image with MiKTeX build environment
 
 ## Obtaining the image
 
 Get the latest image from the registry:
 
-    docker pull miktex/miktex-build-fedora-25
+    docker pull miktex/miktex-build-fedora:latest
 
 or build it yourself:
 
-    docker build --tag miktex/miktex-build-fedora-25 .
+    docker build --tag miktex/miktex-build-fedora:latest .
 
 ## Using the image
 
@@ -23,13 +23,13 @@ container path `/miktex/build`.
 Build the MiKTeX RPM:
 
     mkdir -p ~/work/miktex/source
-    mkdir -p ~/work/miktex/builds/fedora-25
+    mkdir -p ~/work/miktex/builds/fedora-latest
     curl -fsSL https://miktex.org/download/ctan/systems/win32/miktex/source/miktex-2.9.tar.xz | \
       tar -xJ --strip-components=1 -C ~/work/miktex/source
     docker run -t \
       -v ~/work/miktex/source:/miktex/source:ro \
-      -v ~/work/miktex/builds/fedora-25:/miktex/build:rw \
-      miktex/miktex-build-fedora-25
+      -v ~/work/miktex/builds/fedora-latest:/miktex/build:rw \
+      miktex/miktex-build-fedora:latest
 
 The build artifact `miktex-*.rpm` will be written to
-`~/work/miktex/builds/fedora-25`.
+`~/work/miktex/builds/fedora-latest`.
