@@ -18,6 +18,9 @@ MiKTeX source code must be mounted to the container path
 `/miktex/source` and the build directory must be mounted to the
 container path `/miktex/build`.
 
+You should specify a user by setting the container environment
+variables `USER_ID` and `GROUP_ID`.
+
 ### Example
 
 Build the MiKTeX RPM:
@@ -29,6 +32,8 @@ Build the MiKTeX RPM:
     docker run -t \
       -v ~/work/miktex/source:/miktex/source:ro \
       -v ~/work/miktex/builds/fedora-latest:/miktex/build:rw \
+      -e USER_ID=`id -u` \
+      -e GROUP_ID=`id -g` \
       miktex/miktex-build-fedora:latest
 
 The build artifact `miktex-*.rpm` will be written to
