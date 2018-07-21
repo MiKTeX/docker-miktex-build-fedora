@@ -1,6 +1,6 @@
 FROM fedora:28
 
-LABEL Description="MiKTeX build environment, Fedora latest" Vendor="Christian Schenk" Version="2.9.6701"
+LABEL Description="MiKTeX build environment, Fedora latest" Vendor="Christian Schenk" Version="2.9.6776"
 
 RUN    dnf install -y \
            apr-devel \
