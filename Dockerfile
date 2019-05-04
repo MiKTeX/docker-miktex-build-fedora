@@ -36,6 +36,10 @@ RUN    dnf install -y \
            xz-devel \
            zziplib-devel
 
+# libQt5Core.so.5 is build for Linux kernel 4.11 which is by far too new
+# see: https://github.com/Microsoft/WSL/issues/3023
+RUN strip --remove-section=.note.ABI-tag /usr/lib64/libQt5Core.so.5
+
 RUN    gpg --keyserver ha.pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 \
     && curl -o /usr/local/bin/gosu -SL "https://github.com/tianon/gosu/releases/download/1.10/gosu-amd64" \
     && curl -o /usr/local/bin/gosu.asc -SL "https://github.com/tianon/gosu/releases/download/1.10/gosu-amd64.asc" \
