@@ -1,6 +1,6 @@
 FROM fedora:28
 
-LABEL Description="MiKTeX build environment, Fedora latest" Vendor="Christian Schenk" Version="2.9.6776"
+LABEL Description="MiKTeX build environment, Fedora latest" Vendor="Christian Schenk" Version="2.9.7070"
 
 RUN    dnf install -y \
            apr-devel \
@@ -8,7 +8,6 @@ RUN    dnf install -y \
            bison \
            bzip2-devel \
            cairo-devel \
-           cmake \
            curl \
            curl-devel \
            flex \
@@ -35,6 +34,9 @@ RUN    dnf install -y \
            uriparser-devel \
            xz-devel \
            zziplib-devel
+
+RUN    curl --fail --location --show-error --silent https://cmake.org/files/v3.14/cmake-3.14.3-Linux-x86_64.tar.gz \
+     | tar -xz --strip=1 -C /usr/local
 
 RUN    gpg --keyserver ha.pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 \
     && curl -o /usr/local/bin/gosu -SL "https://github.com/tianon/gosu/releases/download/1.10/gosu-amd64" \
