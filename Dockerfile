@@ -1,6 +1,6 @@
 FROM fedora:28
 
-LABEL Description="MiKTeX build environment, Fedora latest" Vendor="Christian Schenk" Version="2.9.7070"
+LABEL Description="MiKTeX build environment, Fedora 28" Vendor="Christian Schenk" Version="2.9.7324"
 
 RUN    dnf install -y \
            apr-devel \
@@ -22,7 +22,6 @@ RUN    dnf install -y \
            libicu-devel \
            libmspack-devel \
            libxslt \
-           log4cxx-devel \
            make \
            mpfr-devel \
            openssl-devel \
@@ -31,7 +30,6 @@ RUN    dnf install -y \
            qt5-devel \
            qt5-qtscript-devel \
            rpm-build \
-           uriparser-devel \
            xz-devel \
            zziplib-devel
 
