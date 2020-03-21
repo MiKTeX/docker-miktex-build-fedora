@@ -1,6 +1,6 @@
 FROM fedora:28
 
-LABEL Description="MiKTeX build environment, Fedora 28" Vendor="Christian Schenk" Version="2.9.7344"
+LABEL Description="MiKTeX build environment, Fedora 28" Vendor="Christian Schenk" Version="2.9.7385"
 
 RUN    dnf install -y \
            apr-devel \
@@ -14,6 +14,7 @@ RUN    dnf install -y \
            fribidi-devel \
            gcc \
            gcc-c++ \
+	   git \
            gpg \
            gd-devel \
            gmp-devel \
