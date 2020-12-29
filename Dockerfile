@@ -1,11 +1,12 @@
 FROM fedora:32
 
-LABEL Description="MiKTeX build environment, Fedora 32" Vendor="Christian Schenk" Version="2.9.7427"
+LABEL Description="MiKTeX build environment, Fedora 32" Vendor="Christian Schenk" Version="20.12"
 
 RUN    dnf install -y \
            apr-devel \
            apr-util-devel \
            bison \
+           boost-devel \
            bzip2-devel \
            cairo-devel \
            cmake \
