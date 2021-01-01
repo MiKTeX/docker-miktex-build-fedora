@@ -14,7 +14,7 @@ RUN    dnf install -y \
            fribidi-devel \
            gcc \
            gcc-c++ \
-	   git \
+           git \
            gpg \
            gd-devel \
            gmp-devel \
