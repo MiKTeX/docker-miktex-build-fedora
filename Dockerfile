@@ -1,12 +1,13 @@
 FROM fedora:28
 
-LABEL Description="MiKTeX build environment, Fedora 28" Vendor="Christian Schenk" Version="2.9.7385"
+LABEL Description="MiKTeX build environment, Fedora 28" Vendor="Christian Schenk" Version="21.1"
 
 RUN    dnf install -y \
            apr-devel \
            apr-util-devel \
            bison \
            bzip2-devel \
+           boost-devel \
            cairo-devel \
            curl \
            curl-devel \
