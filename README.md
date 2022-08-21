@@ -1,40 +1,39 @@
-# Fedora 35 docker image with MiKTeX build environment
+# Fedora 36 docker image with MiKTeX build environment
 
 ## Obtaining the image
 
 Get the latest image from the registry:
 
-    docker pull miktex/miktex-build-fedora:35
+    docker pull miktex/miktex-build-fedora:36
 
 or build it yourself:
 
-    docker build --tag miktex/miktex-build-fedora:35 .
+    docker build --tag miktex/miktex-build-fedora:36 .
 
 ## Using the image
 
 ### Prerequisites
 
-MiKTeX source code must be mounted to the container path
-`/miktex/source` and the build directory must be mounted to the
-container path `/miktex/build`.
+MiKTeX source code must be mounted to the container path `/miktex/source` and
+the build directory must be mounted to the container path `/miktex/build`.
 
-You should specify a user by setting the container environment
-variables `USER_ID` and `GROUP_ID`.
+You should specify a user by setting the container environment variables
+`USER_ID` and `GROUP_ID`.
 
 ### Example
 
 Build the MiKTeX RPM:
 
     mkdir -p ~/work/miktex/source
-    mkdir -p ~/work/miktex/builds/fedora-35
-    curl -fsSL https://miktex.org/download/ctan/systems/win32/miktex/source/miktex-2.9.tar.xz | \
+    mkdir -p ~/work/miktex/builds/fedora-36
+    curl -fsSL https://miktex.org/download/ctan/systems/win32/miktex/source/miktex-22.8.tar.xz | \
       tar -xJ --strip-components=1 -C ~/work/miktex/source
     docker run -t \
       -v ~/work/miktex/source:/miktex/source:ro \
-      -v ~/work/miktex/builds/fedora-35:/miktex/build:rw \
+      -v ~/work/miktex/builds/fedora-36:/miktex/build:rw \
       -e USER_ID=`id -u` \
       -e GROUP_ID=`id -g` \
-      miktex/miktex-build-fedora:35
+      miktex/miktex-build-fedora:36
 
 The build artifact `miktex-*.rpm` will be written to
-`~/work/miktex/builds/fedora-35`.
+`~/work/miktex/builds/fedora-36`.
