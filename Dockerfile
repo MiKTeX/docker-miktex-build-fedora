@@ -1,6 +1,6 @@
-FROM fedora:38
+FROM fedora:39
 
-LABEL Description="MiKTeX build environment, Fedora 38" Vendor="Christian Schenk" Version="23.10.3"
+LABEL Description="MiKTeX build environment, Fedora 39" Vendor="Christian Schenk" Version="23.12"
 
 RUN \
     dnf install -y \
@@ -10,7 +10,6 @@ RUN \
         boost-devel \
         bzip2-devel \
         cairo-devel \
-        cmake \
         curl \
         curl-devel \
         flex \
@@ -42,6 +41,9 @@ RUN \
         uriparser-devel \
         xz-devel \
         zziplib-devel
+
+RUN \
+    curl -SL https://github.com/Kitware/CMake/releases/download/v3.28.1/cmake-3.28.1-linux-x86_64.tar.gz | tar -xz -C /usr/local --strip-components=1
 
 RUN \
     export GNUPGHOME="$(mktemp -d)"; \
