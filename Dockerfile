@@ -1,6 +1,6 @@
 FROM fedora:39
 
-LABEL Description="MiKTeX build environment, Fedora 39" Vendor="Christian Schenk" Version="23.12"
+LABEL Description="MiKTeX build environment, Fedora 39" Vendor="Christian Schenk" Version="23.12.29"
 
 RUN \
     dnf install -y \
@@ -31,12 +31,12 @@ RUN \
         openssl-devel \
         popt-devel \
         potrace-devel \
-        qt5-linguist \
-        qt5-qtbase-devel \
-        qt5-qtdeclarative-devel \
-        qt5-qtscript-devel \
-        qt5-qttools \
-        qt5-qttools-static \
+        qt6-linguist \
+        qt6-qt5compat-devel \
+        qt6-qtbase-devel \
+        qt6-qtdeclarative-devel \
+        qt6-qttools \
+        qt6-qttools-static \
         rpm-build \
         uriparser-devel \
         xz-devel \
