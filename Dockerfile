@@ -1,6 +1,6 @@
 FROM fedora:38
 
-LABEL Description="MiKTeX build environment, Fedora 38" Vendor="Christian Schenk" Version="23.12.29"
+LABEL Description="MiKTeX build environment, Fedora 38" Vendor="Christian Schenk" Version="24.2.16"
 
 RUN \
     dnf install -y \
@@ -28,6 +28,7 @@ RUN \
         libxslt \
         log4cxx-devel \
         make \
+        mpfi-devel \
         mpfr-devel \
         openssl-devel \
         popt-devel \
