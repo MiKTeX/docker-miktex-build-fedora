@@ -1,6 +1,6 @@
-FROM fedora:41
+FROM fedora:42
 
-LABEL Description="MiKTeX build environment, Fedora 41" Vendor="Christian Schenk" Version="24.12.22"
+LABEL Description="MiKTeX build environment, Fedora 42" Vendor="Christian Schenk" Version="25.6.8"
 
 RUN \
     dnf install -y \
