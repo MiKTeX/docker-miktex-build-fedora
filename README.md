@@ -1,14 +1,14 @@
-# Fedora 44 docker image with MiKTeX build environment
+# Fedora 45 docker image with MiKTeX build environment
 
 ## Obtaining the image
 
 Get the latest image from the registry:
 
-    docker pull miktex/miktex-build-fedora:44
+    docker pull miktex/miktex-build-fedora:45
 
 or build it yourself:
 
-    docker build --tag miktex/miktex-build-fedora:44 .
+    docker build --tag miktex/miktex-build-fedora:45 .
 
 ## Using the image
 
@@ -25,15 +25,15 @@ You should specify a user by setting the container environment variables
 Build the MiKTeX RPM:
 
     mkdir -p ~/work/miktex/source
-    mkdir -p ~/work/miktex/builds/fedora-44
+    mkdir -p ~/work/miktex/builds/fedora-45
     curl -fsSL https://miktex.org/download/ctan/systems/win32/miktex/source/miktex-26.2.tar.xz | \
       tar -xJ --strip-components=1 -C ~/work/miktex/source
     docker run -t \
       -v ~/work/miktex/source:/miktex/source:ro \
-      -v ~/work/miktex/builds/fedora-44:/miktex/build:rw \
+      -v ~/work/miktex/builds/fedora-45:/miktex/build:rw \
       -e USER_ID=`id -u` \
       -e GROUP_ID=`id -g` \
-      miktex/miktex-build-fedora:44
+      miktex/miktex-build-fedora:45
 
 The build artifact `miktex-*.rpm` will be written to
-`~/work/miktex/builds/fedora-44`.
+`~/work/miktex/builds/fedora-45`.
