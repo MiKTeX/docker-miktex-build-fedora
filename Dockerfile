@@ -1,6 +1,6 @@
 FROM fedora:44
 
-LABEL Description="MiKTeX build environment, Fedora 44" Vendor="Christian Schenk" Version="26.04.29"
+LABEL Description="MiKTeX build environment, Fedora 44" Vendor="Christian Schenk" Version="26.11.15"
 
 RUN \
     dnf install -y \
@@ -21,6 +21,7 @@ RUN \
         gd-devel \
         gmp-devel \
         graphite2-devel \
+        harfbuzz-devel \
         hunspell-devel \
         libicu-devel \
         libmspack-devel \
